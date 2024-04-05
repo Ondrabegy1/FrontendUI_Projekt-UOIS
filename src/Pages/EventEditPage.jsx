@@ -7,7 +7,7 @@ import { FetchEventByIdAsyncAction } from "../Queries/FetchEventByIdAsyncAction"
 import { EventLargeCard } from "../Components/Event/EventLargeCard"
 
 const validator = CreateAsyncQueryValidator({error: "Nepovedlo se načíst události", success: "Načtení události se povedlo"})
-export const EventPage = ()  => {
+export const EventEditPage = ()  => {
     const {id} = useParams()
     const [onResolve, onReject] = validator(useDispatch())
     const [event, userPromise] = useFreshItem({id}, FetchEventByIdAsyncAction)
@@ -20,7 +20,11 @@ export const EventPage = ()  => {
             //    Události nahrány
             //    {JSON.stringify(event)}
             //</div>
-            <EventLargeCard event={event} />
+            <EventLargeCard event={event}>
+                <EventLargeCard event={event}>
+                    Heureka
+                </EventLargeCard>
+            </EventLargeCard>
         )
     } else {
         return (

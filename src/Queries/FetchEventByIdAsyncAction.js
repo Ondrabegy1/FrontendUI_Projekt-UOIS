@@ -4,6 +4,7 @@ const query = `query ($id: UUID!) {
     result: eventById(id: $id) {
           __typename
           id
+          name
           lastchange
           startdate
           enddate
