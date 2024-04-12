@@ -6,6 +6,8 @@ import { GroupPage, UserPage } from "./Pages";
 import { SearchPage } from "./Pages/SearchPage";
 import { EventPage } from "./Pages/EventPage";
 import { EventEditPage } from "./Pages/EventEditPage";
+import { AccreditationPage } from "./Pages/AccreditationPage";
+import { SubjectPage } from "./Pages/SubjectPage";
 // import { UserPage, GroupPage } from "./Pages";
 
 export const Routes = [
@@ -27,6 +29,31 @@ export const Routes = [
     {
         path: "/event/edit/:id",
         element: <EventEditPage />,
+        errorElement: <SearchPage />,
+    },
+    {
+        path: "/granting/accreditation/view/:accreditation_id",
+        element: <AccreditationPage />,
+        errorElement: <SearchPage />,
+    },
+    {
+        path: "/granting/subject/view/:subject_id",
+        element: <SubjectPage />,
+        errorElement: <SearchPage />,
+    },
+    {
+        path: "/granting/semester/view/:semester_id",
+        element: <SemesterPage />,
+        errorElement: <SearchPage />,
+    },
+    {
+        path: "/granting/userclassification/view/:user_id",
+        element: <UserClassificationPage />,
+        errorElement: <SearchPage />,
+    },
+    {
+        path: "/granting/groupclassification/view/:group_id",
+        element: <GroupClassificationPage />,
         errorElement: <SearchPage />,
     },
     {
